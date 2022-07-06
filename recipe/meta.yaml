@@ -1,17 +1,17 @@
 {% set name = "sdeconv" %}
-{% set version = "0.1.0" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: "https://github.com/sylvainprigent/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz"
-  sha256: f6626764ad8cf631a78be9971253197f58fcea61a43d16c535470de968634a9d
+  url: https://github.com/sylvainprigent/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 52c119d15bd721a6c0e582f41b361ac2260ecde5a1c41b66b7cc5c53f9ae1894
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -48,7 +48,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Python library for 2D and 3D image deconvolution'
+  summary: Python library for 2D and 3D image deconvolution
 
 extra:
   recipe-maintainers:
