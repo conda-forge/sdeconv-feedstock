@@ -27,11 +27,12 @@ requirements:
     - scipy
     - setuptools
   run:
-    - joblib
     - {{ pin_compatible('numpy') }}
     - python
-    - scipy
-    - threadpoolctl
+    - pytorch >=1.11.0
+    - scipy >=1.8.1
+    - torchvision >=0.12.0
+    - scikit-image >=0.19.2
 
 test:
   imports:
