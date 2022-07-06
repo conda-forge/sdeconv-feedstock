@@ -12,6 +12,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py==3.7]
 
 requirements:
   build:
@@ -23,15 +24,17 @@ requirements:
     - llvm-openmp  # [osx]
     - python
     - pip
-    - numpy
+    - numpy >=1.22.4
     - scipy
     - setuptools
   run:
     - joblib
     - {{ pin_compatible('numpy') }}
     - python
-    - scipy
-    - threadpoolctl
+    - pytorch >=1.11.0
+    - scipy >=1.8.1
+    - torchvision >=0.12.0
+    - scikit-image >=0.19.2
 
 test:
   imports:
