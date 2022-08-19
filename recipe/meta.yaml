@@ -30,8 +30,11 @@ requirements:
     - joblib
     - {{ pin_compatible('numpy') }}
     - python
+    - pytorch
+    - scikit-image
     - scipy
     - threadpoolctl
+    - torchvision
 
 test:
   imports:
@@ -47,7 +50,7 @@ about:
   home: https://github.com/sylvainprigent/sdeconv
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE.txt
+  license_file: LICENSE
   summary: Python library for 2D and 3D image deconvolution
 
 extra:
