@@ -10,12 +10,13 @@ source:
   sha256: f6626764ad8cf631a78be9971253197f58fcea61a43d16c535470de968634a9d
 
 build:
-  number: 3
+  number: 4
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - cython
     - fftw
@@ -28,7 +29,6 @@ requirements:
     - setuptools
   run:
     - joblib
-    - {{ pin_compatible('numpy') }}
     - python
     - scipy
     - threadpoolctl
