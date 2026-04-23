@@ -1,5 +1,5 @@
 {% set name = "sdeconv" %}
-{% set version = "0.1.0" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   url: "https://github.com/sylvainprigent/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz"
-  sha256: f6626764ad8cf631a78be9971253197f58fcea61a43d16c535470de968634a9d
+  sha256: 81998622f08f3cddd5a81785ab9b1bfaee848ac0250d5d35f2edbcdd5fa1e939
 
 build:
-  number: 3
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - cython
     - fftw
